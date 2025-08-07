@@ -1,2 +1,27 @@
 log file
 
+The entire code base is made up of multiple modules. Ideal code structure to be attained:
+insurance_bot/
+├── main.py
+├── intents/
+│   ├── __init__.py
+│   ├── claim_status.py
+│   ├── policy_clause_checker.py
+│   └── hospital_network.py
+├── nlu/
+│   ├── __init__.py
+│   ├── intent_classifier.py
+│   └── entity_extractor.py
+├── backend/
+│   ├── clause_retriever.py
+│   ├── llm_agent.py
+│   └── api_clients.py
+├── data/
+│   ├── hospitals.json
+│   └── policies/
+│       └── BAJHLIP23020V012223.pdf
+└── utils/
+    └── config.py
+
+Anshika: define a function in clause_retriever.py which takes the PDF file and stores the information as vector embeddings, so that the LLM agent can semantically search from it.
+Sankalp: Intent classifier design
